@@ -1,7 +1,31 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../main');
+import Sequelize, { Model } from 'sequelize';
 
-const TopPlayer = sequelize.define('TopPlayer', {
+export default class Top extends Model {
+    static init(sequelize) {
+        super.init({
+            id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                primaryKey: true,
+                autoIncrememt: true,
+            },
+            nickName: {
+                type: Sequelize.STRING(50),
+                allowNull: false,
+            },
+            lane: {
+                type: Sequelize.STRING(5),
+                allowNull: false,
+            },
+            {
+                sequelize,
+            }
+        });
+        return this;
+    }
+}
+
+/*const TopPlayer = sequelize.define('TopPlayer', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -18,4 +42,4 @@ const TopPlayer = sequelize.define('TopPlayer', {
     }
 });
 
-module.exports = TopPlayer;
+module.exports = TopPlayer;*/

@@ -1,6 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 
-export default class Jungler extends Model {
+export default class suporte extends Model {
     static init(sequelize) {
         super.init({
             id: {
@@ -24,8 +24,10 @@ export default class Jungler extends Model {
         return this;
     }
 }
+/*const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = require('../main');
 
-/*const TopPlayer = sequelize.define('TopPlayer', {
+const SupPlayer = sequelize.define('SupPlayer', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -42,26 +44,4 @@ export default class Jungler extends Model {
     }
 });
 
-module.exports = TopPlayer;*/
-
-/*const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../main');
-
-const Jungler = sequelize.define('Jungler', {
-    id: {
-        Type: DataTypes.INTEGER,
-        AutoIncrement: true,
-        allowNull: false,
-        primaryKey: true,
-    },
-    nickName: {
-        Type: DataTypes.STRING(50),
-        allowNull: false,
-    },
-    lane: {
-        Type: DataTypes.STRING(5),
-        allowNull: false,
-    }
-});
-
-module.exports = Jungler;*/
+module.exports = SupPlayer;*/

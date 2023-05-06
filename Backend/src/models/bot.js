@@ -1,4 +1,31 @@
-const { Sequelize, DataTypes } = require('sequelize');
+import Sequelize, { Model } from 'sequelize';
+
+export default class Adc extends Model {
+    static init(sequelize) {
+        super.init({
+            id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                primaryKey: true,
+                autoIncrememt: true,
+            },
+            nickName: {
+                type: Sequelize.STRING(50),
+                allowNull: false,
+            },
+            lane: {
+                type: Sequelize.STRING(5),
+                allowNull: false,
+            },
+            {
+                sequelize,
+            }
+        });
+        return this;
+    }
+}
+
+/*const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../main');
 
 const BotPlayer = sequelize.define('BotPlayer', {
@@ -18,4 +45,4 @@ const BotPlayer = sequelize.define('BotPlayer', {
     }
 });
 
-module.exports = BotPlayer;
+module.exports = BotPlayer;*/
