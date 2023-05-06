@@ -1,7 +1,7 @@
 /*----- ROTAS DO MEU SERVIDOR ----------*/
 const express = require('express');
-const { sequelize, DataTypes } = require('sequelize');
 const router = express.Router();
+const { sequelize, DataTypes } = require('sequelize');
 const { Times } = require('../models/times')(sequelize);
 
 /*------- ROTAS PARA A TABELA "TIMES" --------*/
@@ -38,4 +38,3 @@ router.get('/times', async(req, res) => {
 /*------- ROTAS PARA A TABELA "GAMES" --------*/
 
 module.exports = router;
-module.exports = sequelize;
