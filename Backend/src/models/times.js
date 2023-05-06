@@ -1,4 +1,27 @@
-const { DataTypes } = require('sequelize');
+import Sequelize, { Model } from 'sequelize';
+
+export default class Times extends Model {
+    static init(sequelize) {
+        super.init({
+            id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                primaryKey: true,
+                autoIncrement: true,
+            },
+            team_name: {
+                type: Sequelize.STRING(100),
+                allowNull: false,
+                field: 'teamName'
+            },
+        }, {
+            sequelize,
+        });
+        return this;
+    }
+}
+
+/*const { DataTypes } = require('sequelize');
 const sequelize = require('../database/db');
 
 const Times = sequelize.define('times', {
@@ -17,4 +40,4 @@ const Times = sequelize.define('times', {
 module.exports = Times;
 module.exports = sequelize;
 
-//module.exports = Times;
+module.exports = Times;*/

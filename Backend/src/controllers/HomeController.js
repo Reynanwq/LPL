@@ -1,10 +1,11 @@
 //AQUI TEREMOS OS METODOS QUE SERÃO AS NOSSAS REQUISIÇÕES
-
+import Times from '../models/times';
 class HomeController {
-    index(req, res) {
-        res.json({
-            tudoCert: true,
+    async index(req, res) {
+        const times = await Times.findAll({
+            attributes: ['teamName'],
         });
+        res.json(times);
     }
 }
 
