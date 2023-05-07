@@ -12,7 +12,7 @@ export default class Times extends Model {
             team_name: {
                 type: Sequelize.STRING(100),
                 allowNull: false,
-                field: 'teamName'
+                field: 'teamName',
             },
         }, {
             sequelize,

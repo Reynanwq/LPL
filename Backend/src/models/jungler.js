@@ -17,9 +17,9 @@ export default class Jungler extends Model {
                 type: Sequelize.STRING(5),
                 allowNull: false,
             },
-            {
-                sequelize,
-            }
+        }, {
+            sequelize,
+
         });
         return this;
     }

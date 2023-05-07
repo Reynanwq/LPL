@@ -17,9 +17,8 @@ export default class suporte extends Model {
                 type: Sequelize.STRING(5),
                 allowNull: false,
             },
-            {
-                sequelize,
-            }
+        }, {
+            sequelize,
         });
         return this;
     }
