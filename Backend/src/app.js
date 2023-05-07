@@ -5,6 +5,8 @@ import './database/index';
 import './database/toplaner';
 import './database/jg';
 import './database/midlaner';
+import './database/botlaner';
+import './database/suportelaner';
 
 import express from 'express';
 import homeRoutes from './routes/homeRoutes';
