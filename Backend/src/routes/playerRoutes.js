@@ -4,15 +4,18 @@ import PlayerController from '../controllers/PlayerController';
 const router = new Router();
 
 router.get('/toplaner', PlayerController.toplaner);
+router.get('/toplaner/:id', PlayerController.toplanerByID);
 
-router.get('/:id', PlayerController.toplanerByID);
-router.get('/', PlayerController.jungler);
-router.get('/:id', PlayerController.junglerByID);
-router.get('/', PlayerController.midlaner);
-router.get('/:id', PlayerController.midlanerByID);
-router.get('/', PlayerController.adc);
-router.get('/:id', PlayerController.adcByID);
-router.get('/', PlayerController.suporte);
-router.get('/:id', PlayerController.suporteByID);
+router.get('/jungler', PlayerController.jungler);
+router.get('/jungler/:id', PlayerController.junglerByID);
+
+router.get('/midlaner', PlayerController.midlaner);
+router.get('/midlaner/:id', PlayerController.midlanerByID);
+
+router.get('/adc', PlayerController.adc);
+router.get('/adc/:id', PlayerController.adcByID);
+
+router.get('/suporte', PlayerController.suporte);
+router.get('/suporte/:id', PlayerController.suporteByID);
 
 export default router;

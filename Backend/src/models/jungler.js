@@ -9,9 +9,10 @@ export default class Jungler extends Model {
                 primaryKey: true,
                 autoIncrememt: true,
             },
-            nickName: {
+            nick_name: {
                 type: Sequelize.STRING(50),
                 allowNull: false,
+                field: 'nickName',
             },
             lane: {
                 type: Sequelize.STRING(5),
@@ -19,7 +20,7 @@ export default class Jungler extends Model {
             },
         }, {
             sequelize,
-
+            tableName: 'junglerPlayer',
         });
         return this;
     }
