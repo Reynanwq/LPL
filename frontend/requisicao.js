@@ -6,7 +6,9 @@ const fetchLPL = () => {
         .then(lpl => {
             console.log(lpl);
         })
-        .catch
+        .catch(error => {
+          console.error(error);
+    });
 }
 
 fetchLPL()
