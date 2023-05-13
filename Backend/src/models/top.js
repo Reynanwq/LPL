@@ -7,7 +7,7 @@ export default class Top extends Model {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 primaryKey: true,
-                autoIncrememt: true,
+                autoIncrement: true,
             },
             nick_name: {
                 type: Sequelize.STRING(50),
@@ -25,22 +25,3 @@ export default class Top extends Model {
         return this;
     }
 }
-
-/*const TopPlayer = sequelize.define('TopPlayer', {
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrememt: true,
-    },
-    nickName: {
-        type: DataTypes.STRING(50),
-        allowNull: false,
-    },
-    lane: {
-        type: DataTypes.STRING(5),
-        allowNull: false,
-    }
-});
-
-module.exports = TopPlayer;*/
