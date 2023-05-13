@@ -1,21 +1,26 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../main');
+import Sequelize, { Model } from 'sequelize';
 
-const Games = sequelize.define('Games', {
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrememt: true,
-    },
-    win: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    lose: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+export default class Games extends Model {
+    static init(sequelize) {
+        super.init({
+            id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                primaryKey: true,
+                autoIncrement: true,
+            },
+            win: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+            },
+            lose: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+            },
+        }, {
+            sequelize,
+            tableName: 'games',
+        });
+        return this;
     }
-});
-
-module.exports = Games;
+}

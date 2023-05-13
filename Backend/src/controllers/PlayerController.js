@@ -3,6 +3,7 @@ import Jg from '../models/jungler';
 import Mid from '../models/mid';
 import Adc from '../models/bot';
 import Sup from '../models/sup';
+import Games from '../models/games';
 
 class PlayerController {
     //TODOS OS TOP LANER
@@ -107,6 +108,26 @@ class PlayerController {
             res.status(200).json(suporteByID);
         } catch (error) {
             res.status(500).json({ status: 'error', message: 'Internal server  error' });
+        }
+    }
+
+    //PONTUACAO
+    async pontuacao(req, res) {
+        try {
+            const pontucao = await Games.findAll();
+            res.status(200).json(pontucao);
+        } catch (error) {
+            res.status(500).json({ status: 'error', message: 'Internal server error' });
+        }
+    }
+
+    //PONTUACAO BY ID
+    async pontucaoByID(req, res) {
+        try {
+            const pontuacaoByID = await Games.findByPk(req.params.id);
+            res.status(200).json(pontuacaoByID);
+        } catch (error) {
+            res.status(500).json({ tatus: 'error', message: 'Internal server error' });
         }
     }
 }

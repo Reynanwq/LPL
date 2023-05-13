@@ -18,4 +18,7 @@ router.get('/adc/:id', PlayerController.adcByID);
 router.get('/suporte', PlayerController.suporte);
 router.get('/suporte/:id', PlayerController.suporteByID);
 
+router.get('/games/', PlayerController.pontuacao);
+router.get('/games/:id', PlayerController.pontucaoByID);
+
 export default router;

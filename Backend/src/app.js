@@ -9,6 +9,7 @@ import './database/jg';
 import './database/midlaner';
 import './database/botlaner';
 import './database/suportelaner';
+import './database/games';
 
 import express from 'express';
 import homeRoutes from './routes/homeRoutes';
