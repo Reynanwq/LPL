@@ -5,11 +5,12 @@ const fetchTOP = () => {
         .then(response => response.json())
         .then(lpl => {
             const dataTop = document.getElementById('dataTop');
-            const justID = lpl.map(player => player.id);
-            const justIDString = justID.join(', ');
-            dataTop.innerHTML = `<h2>${justIDString}</h2>`;
-            console.log(lpl)
-            console.log(justIDString)
+            const nomeTop = lpl.map(player => player.nick_name); //nome
+            const nomeTopString = nomeTop.join(', ');
+            dataTop.innerHTML = `<h2>${nomeTopString}</h2>`; //exibindo no body
+            //  dataTop.innerHTML = JSON.stringify(lpl); //caso queira exibir todo o json no body
+            console.log(lpl) //exibindo no terminal os dados do db toplaner
+            console.log(nomeTop) //exibindo no terminal o nome do db toplaner
         })
         .catch(error => {
             console.error(error);
@@ -21,8 +22,13 @@ const fetchJG = () => {
     fetch(url)
         .then(response => response.json())
         .then(lpl => {
-            const dataJunlger = document.getElementById('dataJungler')
-            dataJungler.innerHTML = JSON.stringify(lpl)
+            const dataJungler = document.getElementById('dataJungler');
+            const nomeJG = lpl.map(player => player.nick_name); //nome
+            const nomeJGString = nomeJG.join(', ');
+            dataJungler.innerHTML = `<h2>${nomeJGString}</h2>`; //exibindo no body
+            //dataJungler.innerHTML = JSON.stringify(lpl)
+            console.log(lpl);
+            console.log(nomeJG);
         })
         .catch(error => {
             console.log(error);
@@ -34,8 +40,13 @@ const fetchMid = () => {
     fetch(url)
         .then(response => response.json())
         .then(lpl => {
-            const dataMid = document.getElementById('dataMid')
-            dataMid.innerHTML = JSON.stringify(lpl)
+            const dataMid = document.getElementById('dataMid');
+            const nomeMid = lpl.map(player => player.nick_name);
+            const nomeMidString = nomeMid.join(', ');
+            //dataMid.innerHTML = JSON.stringify(lpl)
+            dataMid.innerHTML = `<h2>${nomeMidString}</h2>`;
+            console.log(lpl);
+            console.log(nomeMid);
         })
         .catch(error => {
             console.log(error);
@@ -48,7 +59,12 @@ const fetchAdc = () => {
         .then(response => response.json())
         .then(lpl => {
             const dataAdc = document.getElementById('dataAdc')
-            dataAdc.innerHTML = JSON.stringify(lpl)
+            const nomeAdc = lpl.map(player => player.nick_name);
+            const nomeAdcString = nomeAdc.join(', ');
+            dataAdc.innerHTML = `<h2>${nomeAdcString}</h2>`;
+            //dataAdc.innerHTML = JSON.stringify(lpl)
+            console.log(lpl);
+            console.log(nomeAdc);
         })
         .catch(error => {
             console.log(error);
@@ -61,7 +77,12 @@ const fetchSUP = () => {
         .then(response => response.json())
         .then(lpl => {
             const dataSUP = document.getElementById('dataSUP')
-            dataSUP.innerHTML = JSON.stringify(lpl)
+            const nomeSUP = lpl.map(player => player.nick_name);
+            const nomeSUPString = nomeSUP.join(', ');
+            dataSUP.innerHTML = `<h2>${nomeSUPString}</h2>`;
+            //dataSUP.innerHTML = JSON.stringify(lpl).log
+            console.log(lpl);
+            console.log(nomeSUP);
         })
         .catch(error => {
             console.log(error);
