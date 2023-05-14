@@ -89,9 +89,22 @@ const fetchSUP = () => {
         })
 }
 
+const fetchGames = () => {
+    const url = `http://localhost:8080/players/games/`;
+    fetch(url)
+        .then(response => response.json())
+        .then(lpl => {
+            const dataGame = document.getElementById('dataGames');
+            dataGame.innerHTML = JSON.stringify(lpl);
+            console.log(lpl);
+            console.log(dataGame);
+        })
+}
+
 
 fetchTOP()
 fetchJG()
 fetchMid()
 fetchAdc()
 fetchSUP()
+fetchGames()
