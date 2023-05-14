@@ -5,7 +5,11 @@ const fetchTOP = () => {
         .then(response => response.json())
         .then(lpl => {
             const dataTop = document.getElementById('dataTop');
-            dataTop.innerHTML = JSON.stringify(lpl);
+            const justID = lpl.map(player => player.id);
+            const justIDString = justID.join(', ');
+            dataTop.innerHTML = `<h2>${justIDString}</h2>`;
+            console.log(lpl)
+            console.log(justIDString)
         })
         .catch(error => {
             console.error(error);
