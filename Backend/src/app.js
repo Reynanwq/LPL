@@ -14,7 +14,7 @@ import './database/games';
 import express from 'express';
 import homeRoutes from './routes/homeRoutes';
 import playerRoutes from './routes/playerRoutes';
-
+import fotoRoutes from './routes/fotoRoutes';
 class App {
     constructor() {
         this.app = express();
@@ -31,6 +31,7 @@ class App {
     routes() {
         this.app.use('/', homeRoutes);
         this.app.use('/players/', playerRoutes);
+        this.app.use('/fotos/', fotoRoutes);
     }
 }
 
