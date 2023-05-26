@@ -1,7 +1,12 @@
 import { Router } from 'express';
-const router = new Router();
-import fotoController from '../controllers/FotoController';
+import multer from 'multer';
 
-router.post('/', fotoController.store);
+import fotoController from '../controllers/FotoController';
+import multerConfig from '../config/multerConfig';
+
+const upload = multer(multerConfig);
+const router = new Router();
+
+router.post('/', upload.single('fotoTeste'), fotoController.store);
 
 export default router;
