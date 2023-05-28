@@ -7,7 +7,7 @@ export default {
     //verifica se é PNG OU JPG
     fileFilter: (req, file, cb) => {
         if (file.mimetype != 'image/png' && file.mimetype != 'image/jpg' && file.mimetype != 'image/webp') {
-            return cb(new multer.MulterError('Arquivo precisa ser PNG ou JPG'));
+            return cb(new multer.MulterError('Arquivo precisa ser PNG, JPG ou WEBP'));
         }
         return cb(null, true);
     },
@@ -17,6 +17,7 @@ export default {
         },
         filename: (req, file, cb) => {
             cb(null, `${Date.now()}_${aleatorio()}${extname(file.originalname)}`);
+            //console.log(req.file);
         }
     })
 };

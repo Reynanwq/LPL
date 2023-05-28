@@ -1,6 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
 import appConfig from '../config/database';
-import Times from './times';
 
 
 export default class Foto extends Model {
