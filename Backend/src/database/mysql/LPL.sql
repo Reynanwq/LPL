@@ -9,7 +9,7 @@ SELECT * FROM botPlayer;
 SELECT * FROM supPlayer;
 SELECT * FROM games;
 SELECT * FROM games
-	ORDER BY win DESC;
+SELECT * FROM imagens;
 
 -- SELECIONANDO TODOS OS DADOS
 SELECT team.teamName AS 'Team', top.nickName AS 'Top Laner', jg.nickName AS 'Jungler', mid.nickName AS 'Mid Laner', bot.nickName AS 'ADC', sup.nickName AS 'Sup', gm.win AS 'Win', gm.lose AS 'Lose'
@@ -298,6 +298,16 @@ CREATE TABLE IF NOT EXISTS games(
     win INT NOT NULL,
     lose INT NOT NULL
 );
+
+CREATE TABLE imagens (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  imagem LONGBLOB NOT NULL
+);
+
+-- TIVE QUE DELETAR E TABELA IMAGEM, MAS DEPOIS CRIEI NOVAMENTE
+DROP TABLE imagens;
+
 
 -- PRIMEIRA ATUALIZACAO DA TABELA: DIA 11/02/2023
 

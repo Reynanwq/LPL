@@ -106,16 +106,25 @@ const fetchFotos = () => {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            const imagemData = data[0].imagem.data; // Obtém os dados binários da imagem
-            const imagemBase64 = btoa(String.fromCharCode(...imagemData)); // Converte para base64
-            const imagemSrc = `data:image/webp;base64,${imagemBase64}`; // Define o atributo src da imagem
+            const imagensContainer = document.getElementById('imagensContainer');
 
-            document.getElementById('imagem').src = imagemSrc;
+            data.forEach(imagem => {
+                const imagemData = imagem.imagem.data; // Obtém os dados binários da imagem
+                const imagemBase64 = btoa(String.fromCharCode(...imagemData)); // Converte para base64
+                const imagemSrc = `data:image/webp;base64,${imagemBase64}`; // Define o atributo src da imagem
+
+                const imgElement = document.createElement('img');
+                imgElement.src = imagemSrc;
+                imgElement.alt = imagem.nome;
+
+                imagensContainer.appendChild(imgElement);
+            });
         })
         .catch(error => {
-            console.error('Erro ao obter a imagem:', error);
+            console.error('Erro ao obter as imagens:', error);
         });
 }
+
 
 //fetchTOP()
 //fetchJG()
