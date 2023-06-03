@@ -10,11 +10,13 @@ import './database/midlaner';
 import './database/botlaner';
 import './database/suportelaner';
 import './database/games';
+import './database/foto';
 
 import express from 'express';
 import homeRoutes from './routes/homeRoutes';
 import playerRoutes from './routes/playerRoutes';
 import fotoRoutes from './routes/fotoRoutes';
+
 class App {
     constructor() {
         this.app = express();

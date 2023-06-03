@@ -1,35 +1,27 @@
-import multer from 'multer';
-import multerConfig from '../config/multerConfig';
-
-import Foto from '../models/foto_times';
-import Times from '../models/times';
-
-const upload = multer(multerConfig).single('UP');
+import connection from '../config/database';
 
 class FotoController {
-    async store(req, res) {
+    async fotos(req, res) {
         try {
-            const { originalname, filename } = req.file;
-            const { times_id } = req.body;
+            const sql = 'SELECT * FROM imagens';
+            const [result] = await connection.query(sql);
 
-            const time = await Times.findByPk(times_id);
-            if (!time) {
-                return res.status(400).json({
-                    errors: ['Time não existe'],
-                });
+            if (result.length === 0) {
+                return res.status(404).json({ message: 'Nenhuma imagem encontrada' });
             }
 
-            const foto = await Foto.create({ originalname, filename, times_id });
+            const imagens = result.map((row) => ({
+                id: row.id,
+                nome: row.nome,
+                imagem: row.imagem,
+            }));
 
-            return res.json(foto);
+            res.status(200).json(imagens);
         } catch (error) {
-            console.log(error);
-            return res.status(500).json({ error: 'Ocorreu um erro ao criar a foto' });
-
+            console.error('Erro ao obter as imagens do banco de dados:', error);
+            res.status(500).json({ message: 'Erro ao obter as imagens do banco de dados' });
         }
     }
 }
 
 export default new FotoController();
-
-export { upload };

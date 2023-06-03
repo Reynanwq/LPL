@@ -29,6 +29,8 @@ router.get('/suporte/:id', PlayerController.suporteByID);
 router.get('/games/', PlayerController.pontuacao);
 router.get('/games/:id', PlayerController.pontucaoByID);
 
+router.get('/fotos/', PlayerController.getAllFotos);
+
 router.get('/times/:teamName', async(req, res) => {
     try {
         const { teamName } = req.params;

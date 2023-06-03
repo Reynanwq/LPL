@@ -4,7 +4,7 @@ import Mid from '../models/mid';
 import Adc from '../models/bot';
 import Sup from '../models/sup';
 import Games from '../models/games';
-
+import Fotos from '../models/foto_times';
 class PlayerController {
     //TODOS OS TOP LANER
     async toplaner(req, res) {
@@ -130,6 +130,17 @@ class PlayerController {
             res.status(500).json({ tatus: 'error', message: 'Internal server error' });
         }
     }
+
+    async getAllFotos(req, res) {
+        try {
+            const fotos = await Fotos.findAll();
+            res.status(200).json(fotos);
+        } catch (error) {
+            console.error('Erro ao obter as fotos do banco de dados:', error);
+            res.status(500).json({ message: 'Erro ao obter as fotos do banco de dados' });
+        }
+    }
+
 }
 
 export default new PlayerController();

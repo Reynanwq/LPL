@@ -1,42 +1,30 @@
 import Sequelize, { Model } from 'sequelize';
-import appConfig from '../config/database';
 
-
-export default class Foto extends Model {
+export default class Fotos extends Model {
     static init(sequelize) {
         super.init({
-            originalname: {
-                type: Sequelize.STRING,
-                defaultValue: '',
-                validate: {
-                    notEmpty: {
-                        msg: 'Campo não pode ficar vazio.',
-                    },
-                },
+            id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                primaryKey: true,
+                autoIncrement: true,
             },
-            filename: {
-                type: Sequelize.STRING,
-                defaultValue: '',
-                validate: {
-                    notEmpty: {
-                        msg: 'Campo não pode ficar vazio.',
-                    },
-                },
+            nome: {
+                type: Sequelize.STRING(225),
+                allowNull: false,
+                field: 'nome',
             },
-            url: {
-                type: Sequelize.VIRTUAL,
-                get() {
-                    return `${appConfig.url}/images/${this.getDataValue('filename')}`;
-                },
+            imagem: {
+                type: Sequelize.BLOB('long'),
+                allowNull: false,
+                field: 'imagem',
             },
         }, {
             sequelize,
-            tableName: 'fotos_times',
+            modelName: 'Fotos',
+            tableName: 'imagens',
         });
-        return this;
-    }
 
-    static associate(models) {
-        this.belongsTo(models.Times, { foreignKey: 'times_id' });
+        return this;
     }
 }
