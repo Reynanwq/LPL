@@ -126,12 +126,14 @@ const fetchFotos = () => {
         });
 }
 
+
+/*EXIBE FOTO DOS TIMES */
 const fetchFotoEDG = (nomeImagem) => {
     const url = `http://localhost:8080/players/fotos`;
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            const imagensContainer = document.getElementById('edgContainer');
+            const imagensContainer = document.getElementById('allContainer');
 
             const imagem = data.find(imagem => imagem.nome === nomeImagem);
             if (imagem) {
@@ -154,6 +156,80 @@ const fetchFotoEDG = (nomeImagem) => {
         });
 }
 
+/* EXIBE O TIME DE ANYONES LEGENDS */
+const alTime = (topImagem, jgImagem, midImagem, adcImagem, supImagem, containerID) => {
+    const url = `http://localhost:8080/players/fotos`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const imagensContainer = document.getElementById(containerID);
+
+            const top = data.find(imagem => imagem.nome === topImagem);
+            const jg = data.find(imagem => imagem.nome === jgImagem);
+            const mid = data.find(imagem => imagem.nome === midImagem);
+            const adc = data.find(imagem => imagem.nome === adcImagem);
+            const sup = data.find(imagem => imagem.nome === supImagem);
+
+            if (top && jg && mid && adc && sup) {
+                //TOPLANER
+                const imagemDataTop = top.imagem.data; // Obtém os dados binários da imagem
+                const imagemBase64Top = btoa(String.fromCharCode(...imagemDataTop)); // Converte para base64
+                const imagemSrcTop = `data:image/webp;base64,${imagemBase64Top}`; // Define o atributo src da imagem
+                const imgElementTop = document.createElement('img');
+                imgElementTop.src = imagemSrcTop;
+                console.log(imagemSrcTop);
+                imgElementTop.alt = top.nome;
+                imagensContainer.appendChild(imgElementTop);
+
+                //JUNGLER
+                const imagemDataJg = jg.imagem.data;
+                const imagemBase64Jg = btoa(String.fromCharCode(...imagemDataJg));
+                const imagemSrcJg = `data:image/webp;base64,${imagemBase64Jg}`;
+                const imgElementJg = document.createElement('img');
+                imgElementJg.src = imagemSrcJg;
+                console.log(imagemSrcJg);
+                imgElementJg.alt = jg.nome;
+                imagensContainer.appendChild(imgElementJg);
+
+                //MIDLANER
+                const imagemDataMid = mid.imagem.data;
+                const imagemBase64Mid = btoa(String.fromCharCode(...imagemDataMid));
+                const imagemSrcMid = `data:image/webp;base64,${imagemBase64Mid}`;
+                const imgElementMid = document.createElement('img');
+                imgElementMid.src = imagemSrcMid;
+                console.log(imagemSrcMid);
+                imgElementMid.alt = mid.nome;
+                imagensContainer.appendChild(imgElementMid);
+
+                //ADC
+                const imagemDataAdc = adc.imagem.data;
+                const imagemBase64Adc = btoa(String.fromCharCode(...imagemDataAdc));
+                const imagemSrcAdc = `data:image/webp;base64,${imagemBase64Adc}`;
+                const imgElementAdc = document.createElement('img');
+                imgElementAdc.src = imagemSrcAdc;
+                console.log(imagemSrcAdc);
+                imgElementAdc.alt = adc.nome;
+                imagensContainer.appendChild(imgElementAdc);
+
+                //SUPORTE
+                const imagemDataSup = sup.imagem.data;
+                const imagemBase64Sup = btoa(String.fromCharCode(...imagemDataSup));
+                const imagemSrcSup = `data:image/webp;base64,${imagemBase64Sup}`;
+                const imgElementSup = document.createElement('img');
+                imgElementSup.src = imagemSrcSup;
+                console.log(imagemSrcSup);
+                imgElementSup.alt = sup.nome;
+                imagensContainer.appendChild(imgElementSup);
+
+            } else {
+                console.log('Alguma(s) imagem(ns) não encontrada(s)');
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao obter as imagens:', error);
+        });
+}
+
 
 
 //fetchTOP()
@@ -164,12 +240,12 @@ const fetchFotoEDG = (nomeImagem) => {
 //fetchGames()
 //fetchFotos()
 fetchFotoEDG('AL_logo.webp');
-fetchFotoEDG('BLG_logo.webp');
+fetchFotoEDG('BLG_logo.png');
 fetchFotoEDG('EDG_logo.webp');
 fetchFotoEDG('FPX_logo.webp');
 fetchFotoEDG('IG_logo.webp');
 fetchFotoEDG('JDG_logo.webp');
-fetchFotoEDG('LGD_logo.webp');
+fetchFotoEDG('LDG_logo.webp');
 fetchFotoEDG('LNG_logo.webp');
 fetchFotoEDG('NIP_logo.webp');
 fetchFotoEDG('OMG_logo.webp');
@@ -180,3 +256,20 @@ fetchFotoEDG('TT_logo.webp');
 fetchFotoEDG('UP_logo.webp');
 fetchFotoEDG('WE_logo.webp');
 fetchFotoEDG('Weibo_logo.webp');
+alTime('zdz.webp', 'Harder.webp', 'Xiaohao.webp', 'Betty.webp', 'SwordArt.webp', 'alContainer');
+alTime('Bin.webp', 'Xun.webp', 'Yagao.webp', 'Elk.webp', 'ON.webp', 'blgContainer');
+alTime('Ale.webp', 'Jiejie.webp', 'Fofo.webp', 'Leave.webp', 'Meiko.webp', 'edgContainer');
+alTime('Xiaolaohu.webp', 'H4cker.webp', 'Care.webp', 'Lwx.webp', 'QiuQiu.webp', 'fpxContainer');
+alTime('YSKM.webp', 'Gideon.webp', 'Dove.webp', 'Ahn.webp', 'Wink.webp', 'igContainer');
+alTime('369.webp', 'Kanavi.webp', 'Knight.webp', 'Ruler.webp', 'Missing.webp', 'jdgContainer');
+alTime('Meteor.webp', 'Meteor.webp', 'Haichao.webp', 'Lpc.webp', 'Xiaoxu.webp', 'lgdContainer');
+alTime('Zika.webp', 'Tarzan.webp', 'Scout.webp', 'LP.webp', 'Hang.webp', 'lngContainer');
+alTime('Invincible.webp', 'XLB.webp', 'Dream.webp', 'Photic.webp', 'Zhuo.webp', 'nipContainer');
+alTime('Shanji.webp', 'Aki.webp', 'Creme.webp', 'Able.webp', 'ppgod.webp', 'omgContainer');
+alTime('Cube.webp', 'Leyan.webp', 'Strive.webp', 'Assum.webp', 'Southwind.webp', 'raContainer');
+alTime('Breathe.webp', 'Wei.webp', 'Tangyuan.webp', 'Gala.webp', 'Ming.webp', 'rngContainer');
+alTime('Wayward.webp', 'Tian.webp', 'Rookie.webp', 'JackeyLove.webp', 'Mark.webp', 'tesContainer');
+alTime('HOYA.webp', 'Beichuan.webp', 'UCAL.webp', 'Huanfeng.webp', 'Yaoyao.webp', 'ttContainer');
+alTime('Hery.webp', 'Ning.webp', 'Forge.webp', 'Doggo.webp', 'Baolan.webp', 'upContainer');
+alTime('Biubiu.webp', 'Heng.webp', 'Shanks.webp', 'Hope.webp', 'Iwandy.webp', 'weContainer');
+alTime('TheShy.webp', 'Karsa.webp', 'Xiaohu.webp', 'Light.webp', 'Crisp.webp', 'weiboContainer');
