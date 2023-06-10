@@ -115,6 +115,7 @@ const fetchFotos = () => {
 
                 const imgElement = document.createElement('img');
                 imgElement.src = imagemSrc;
+                console.log(imagemSrc);
                 imgElement.alt = imagem.nome;
 
                 imagensContainer.appendChild(imgElement);
@@ -125,6 +126,35 @@ const fetchFotos = () => {
         });
 }
 
+const fetchFotoEDG = (nomeImagem) => {
+    const url = `http://localhost:8080/players/fotos`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const imagensContainer = document.getElementById('edgContainer');
+
+            const imagem = data.find(imagem => imagem.nome === nomeImagem);
+            if (imagem) {
+                const imagemData = imagem.imagem.data; // Obtém os dados binários da imagem
+                const imagemBase64 = btoa(String.fromCharCode(...imagemData)); // Converte para base64
+                const imagemSrc = `data:image/webp;base64,${imagemBase64}`; // Define o atributo src da imagem
+
+                const imgElement = document.createElement('img');
+                imgElement.src = imagemSrc;
+                console.log(imagemSrc);
+                imgElement.alt = imagem.nome;
+
+                imagensContainer.appendChild(imgElement);
+            } else {
+                console.log('Imagem não encontrada');
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao obter as imagens:', error);
+        });
+}
+
+
 
 //fetchTOP()
 //fetchJG()
@@ -132,4 +162,21 @@ const fetchFotos = () => {
 //fetchAdc()
 //fetchSUP()
 //fetchGames()
-fetchFotos()
+//fetchFotos()
+fetchFotoEDG('AL_logo.webp');
+fetchFotoEDG('BLG_logo.webp');
+fetchFotoEDG('EDG_logo.webp');
+fetchFotoEDG('FPX_logo.webp');
+fetchFotoEDG('IG_logo.webp');
+fetchFotoEDG('JDG_logo.webp');
+fetchFotoEDG('LGD_logo.webp');
+fetchFotoEDG('LNG_logo.webp');
+fetchFotoEDG('NIP_logo.webp');
+fetchFotoEDG('OMG_logo.webp');
+fetchFotoEDG('RA_logo.webp');
+fetchFotoEDG('RNG_logo.webp');
+fetchFotoEDG('TES_logo.webp');
+fetchFotoEDG('TT_logo.webp');
+fetchFotoEDG('UP_logo.webp');
+fetchFotoEDG('WE_logo.webp');
+fetchFotoEDG('Weibo_logo.webp');

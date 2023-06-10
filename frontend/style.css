@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*background-color: white;*/
+}
+
+.foto{
+  background-color: blue;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
