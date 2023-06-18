@@ -4,15 +4,6 @@
   /*background-color: white;*/
 }
 
-.foto{
-  background-color: blue;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 #allContainer img{
   width: 250px;
   height: 250px;
@@ -31,6 +22,11 @@ img {
   margin: 10px
 }
 
+.blgLineUP{
+  background: #9AF5B0;
+  width: 1500px;
+}
+
 #blgContainer img{
   width: 250px;
   height: 250px;
@@ -38,6 +34,11 @@ img {
   border-radius: 5px;
   background-color: #f1f1f1;
   margin: 10px
+}
+
+.edgLineUP{
+  background: #9AF5B0;
+  width: 1500px;
 }
 
 #edgContainer img {
@@ -50,6 +51,11 @@ img {
 
 }
 
+.fpxLineUP{
+  background: #85FFCD;
+  width: 1500px;
+}
+
 #fpxContainer img {
   width: 250px;
   height: 250px;
@@ -57,7 +63,11 @@ img {
   border-radius: 5px;
   background-color: #f1f1f1;
   margin: 10px;
+}
 
+.igLineUP{
+  background: #85FFCD;
+  width: 1500px;
 }
 
 #igContainer img {
@@ -67,7 +77,11 @@ img {
   border-radius: 5px;
   background-color: #f1f1f1;
   margin: 10px;
+}
 
+.jdgLineUP{
+  background: #85FFCD;
+  width: 1500px;
 }
 
 #jdgContainer img {
@@ -80,6 +94,11 @@ img {
 
 }
 
+.lgdLineUP{
+  background: #89E8E3;
+  width: 1500px;
+}
+
 #lgdContainer img {
   width: 250px;
   height: 250px;
@@ -88,6 +107,11 @@ img {
   background-color: #f1f1f1;
   margin: 10px;
 
+}
+
+.lngLineUP{
+  background: #89E8E3;
+  width: 1500px;
 }
 
 #lngContainer img {
@@ -100,6 +124,11 @@ img {
 
 }
 
+.nipLineUP{
+  background: #89E8E3;
+  width: 1500px;
+}
+
 #nipContainer img {
   width: 250px;
   height: 250px;
@@ -110,6 +139,11 @@ img {
 
 }
 
+.omgLineUP{
+  background: #7BBAD4;
+  width: 1500px;
+}
+
 #omgContainer img {
   width: 250px;
   height: 250px;
@@ -117,6 +151,11 @@ img {
   border-radius: 5px;
   background-color: #f1f1f1;
   margin: 10px;
+}
+
+.raLineUP{
+  background: #7BBAD4;
+  width: 1500px;
 }
 
 #raContainer img {
@@ -129,6 +168,11 @@ img {
 
 }
 
+.rngLineUP{
+  background: #7BBAD4;
+  width: 1500px;
+}
+
 #rngContainer img {
   width: 250px;
   height: 250px;
@@ -137,6 +181,11 @@ img {
   background-color: #f1f1f1;
   margin: 10px;
 
+}
+
+.tesLineUP{
+  background: #79A9F5;
+  width: 1500px;
 }
 
 #tesContainer img {
@@ -149,6 +198,11 @@ img {
 
 }
 
+.ttLineUP{
+  background: #79A9F5;
+  width: 1500px;
+}
+
 #ttContainer img {
   width: 250px;
   height: 250px;
@@ -157,6 +211,11 @@ img {
   background-color: #f1f1f1;
   margin: 10px;
 
+}
+
+.upLineUP{
+  background: #79A9F5;
+  width: 1500px;
 }
 
 #upContainer img {
@@ -169,6 +228,11 @@ img {
 
 }
 
+.weLineUP{
+  background: #2532F5;
+  width: 1500px;
+}
+
 #weContainer img {
   width: 250px;
   height: 250px;
@@ -177,6 +241,11 @@ img {
   background-color: #f1f1f1;
   margin: 10px;
 
+}
+
+.weiboLineUP{
+  background: #2532F5;
+  width: 1500px;
 }
 
 #weiboContainer img {

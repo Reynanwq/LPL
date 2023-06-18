@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*background-color: white;*/
+}
+
+.allTimes{
+  background-color: #F5EA9A;
+}
+
+.allTimes h1{
+  margin: 10px;
+  padding: 50px;
+  text-align: center;
+  font-size: 100px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FA7C09;
+}
+
+#allContainer img{
+  width: 280px;
+  height: 280px;
+  border: 5\px solid #000;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  margin: 100px;
+}

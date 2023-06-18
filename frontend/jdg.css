@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*background-color: white;*/
+}
+
+#allContainer img{
+  width: 250px;
+  height: 250px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  margin: 10px
+}
+
+.jdgLineUP{
+  background-color: #9AF5B0;
+  width: 1500px;
+  border: 5px solid #EB65F5;
+}
+
+.jdgLineUP h1{
+  margin: 10px;
+  padding: 50px;
+  text-align: center;
+  font-size: 100px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #FA7C09;
+}
+
+#jdgContainer img{
+  width: 250px;
+  height: 250px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  margin: 10px
+}
