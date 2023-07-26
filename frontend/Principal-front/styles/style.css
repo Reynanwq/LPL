@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+nav > a {
+    border: 1px solid blue;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+p {
+    width: 50%;
+    margin: auto;
+}
+
+#containertable {
+    overflow-x: auto;
+    /* Em telas menores, faz com que somente a tabela seja possível arrastar para os lados sem bagunçar a responsividade do site. */
+}
+
+table {
+    background-color: cadetblue;
+    margin: auto;
+    border-collapse: collapse; /* Por padrão as células da tabela não ficam coladas, essa linha junta todas as células */
+}
+
+th, td {
+    width: 100px;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.proxfase, .repescagem, .eliminados {
+    font-weight: bolder;
+}
+
+.proxfase {
+    color: rgba(0, 128, 0, 0.644);
+}
+
+.repescagem {
+    color: rgba(255, 255, 0, 0.644);
+}
+
+.eliminados {
+    color: rgba(255, 0, 0, 0.644);
+}
+
+/* tr:nth-child(even) {
+    background:lightgray;
+    Cor sim, cornão, cor sim, cornão...
+} */
+
+.descricaocampeonato, #descricaorodadas {
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+#setasrodadas {
+    width: 400px;
+    margin: auto; /* Centraliza a seção no meio do site */
+    display: flex;
+    justify-content: space-between; /* Distribui igualmente o espaço entre as imagens */
+}
+
+#setasrodadas > p {
+    text-align: center;
+    /* centraliza o nome "Rodadas" no meio das setas */
+}
+
+#rodadas {
+    display: flex;
+    justify-content: center;
+    /* centraliza o iframe */
+}
+
+ul {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    columns: 3;
+}
+
+@media screen and (max-width: 500px) {
+    #setasrodadas {
+        width: 73%;
+        /* As setas estavam bagunçando a responsividade do site */
+        margin-bottom: 30px;
+    }
+}
